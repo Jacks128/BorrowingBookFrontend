@@ -38,13 +38,22 @@ export class ClientesService {
     
     });
   }
+
+
   registrar(renewalQuantity:any,returned:boolean,bookid:any,userid:any): Observable<any> {
+    const datos={
+      renewalQuantity:renewalQuantity,
+      returned:returned,
+      bookid:bookid,
+      userid:userid
+    }
     return this.httpclient.post(this.path + "/borrowedbook/create",
       {
-        renewalQuantity: renewalQuantity,
-        returned: returned,
-        bookid: bookid,
-        userid: userid
+        body: JSON.stringify(datos), // <-- Aquí van los datos
+        headers: {
+          "Content-Type": "application/json", // <-- Importante el encabezado
+        },
+        method: "POST",
       });
   }
 
@@ -52,6 +61,20 @@ export class ClientesService {
     return this.httpclient.post(this.path + "/ticket/create/"+idbbook,
       {
         idbbook: idbbook
+      });
+  }
+
+  renewal(idrenewal:any): Observable<any> {
+    return this.httpclient.put(this.path + "/borrowedbook/renewal/"+idrenewal,
+      {
+        idrenewal: idrenewal
+      });
+  }
+
+  returnB(idreturn:any): Observable<any> {
+    return this.httpclient.put(this.path + "/borrowedbook/returnborrowedBook/"+idreturn,
+      {
+        idreturn: idreturn
       });
   }
   

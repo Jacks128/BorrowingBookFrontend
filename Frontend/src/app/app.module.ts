@@ -20,7 +20,8 @@ import { BorrowedBookComponent } from './borrowed-book/borrowed-book.component';
     UserComponent,
     BookComponent,
     TicketComponent,
-    BorrowedBookComponent
+    BorrowedBookComponent,
+    
     
 
   ],

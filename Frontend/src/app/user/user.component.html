@@ -21,9 +21,9 @@
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                             <li><a class="dropdown-item" href="reservation">Reservation</a></li>
                             <li><a class="dropdown-item" href="borrowed-book">Borrow Books</a></li>
-                            <li><a class="dropdown-item" href="#">Return Books</a></li>
-                            <li><a class="dropdown-item" href="#">Renovations</a></li>
-                            <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#createTicket">Create Ticket</a></li>
+                            <li><a class="dropdown-item" href="home">Return Books</a></li>
+                            <li><a class="dropdown-item" href="home">Renovations</a></li>
+                            <li><a class="dropdown-item" href="home">Create Ticket</a></li>
                             <li><a class="dropdown-item" href="ticket">Check Tickets</a></li>
                             <li><a class="dropdown-item" href="book">Books</a></li>
                             <li><a class="dropdown-item" href="user">Users</a></li>
@@ -50,12 +50,15 @@
                             </td>
 
                         </tr>
-                        <tr>
-                            <div class="input-group animate__animated animate__slideInUp">
-                                <input type="text" class="form-control" placeholder="ID Client" aria-label="ID Client">
-                                <button class="btn btn-outline-secondary" type="button">Search by ID</button>
-                                <button class="btn btn-outline-secondary"  type="button" (click)="getUsuarios()">Search All</button>
-                              </div>
+                        <tr>    
+                            <td>
+                                <div class="display-5 text-center">
+
+                                <button class="btn btn-outline-secondary animate__animated animate__slideInUp"   type="button" (click)="getUsuarios()">Search All</button>
+                            </div>
+
+                            </td>
+                            
                         </tr>
                         
 

@@ -1,6 +1,8 @@
 <head>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
 </head>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
 <div class="bg-dark vh-100">
 
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -21,8 +23,8 @@
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                             <li><a class="dropdown-item" href="reservation">Reservation</a></li>
                             <li><a class="dropdown-item" href="borrowed-book">Borrow Books</a></li>
-                            <li><a class="dropdown-item" href="#">Return Books</a></li>
-                            <li><a class="dropdown-item" href="#">Renovations</a></li>
+                            <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#return">Return Books</a></li>
+                            <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#renoval">Renovations</a></li>
                             <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#createTicket">Create Ticket</a></li>
                             <li><a class="dropdown-item" href="ticket">Check Tickets</a></li>
                             <li><a class="dropdown-item" href="book">Books</a></li>
@@ -70,7 +72,7 @@
 </div>
 
 
-<!-- Subir Archivo -->
+<!-- TICKET -->
 
 <div class="modal fade" id="createTicket" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
     aria-labelledby="staticBackdropLabel" aria-hidden="true">
@@ -82,12 +84,11 @@
             </div>
             <div class="modal-body">
                 <div class="col-auto">
-                    <input type="text" class="form-control" placeholder="ID Borrowed Book" aria-label="ID Borrowed Book" [(ngModel)]="idbbook" name="idbbook">
+                    <input type="text" class="form-control" placeholder="ID Borrowed Book" aria-label="ID Borrowed Book"
+                        [(ngModel)]="idbbook" name="idbbook">
                 </div>
             </div>
             <div class="row g-2 align-items-center" style="justify-content: left; margin-left: 2ex;">
-               
-                
 
             </div>
 
@@ -95,6 +96,65 @@
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
                 <button type="button" class="btn btn-primary" (click)="InsertarTicket()">Cargar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- RENEWAL -->
+
+<div class="modal fade" id="renoval" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+    aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="staticBackdropLabel"> Book Renewal</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="col-auto">
+                    <input type="text" class="form-control" placeholder="ID Book Renewal" aria-label="ID Borrowed Book"
+                    [(ngModel)]="idrenewal" name="idrenewal" >
+                </div>
+            </div>
+            <div class="row g-2 align-items-center" style="justify-content: left; margin-left: 2ex;">
+
+            </div>
+
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                <button type="button" class="btn btn-primary" (click)="renewal()">Cargar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- RETURN -->
+
+<div class="modal fade" id="return" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+    aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="staticBackdropLabel"> Return of Books</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="col-auto">
+                    <input type="text" class="form-control" placeholder="ID Returned Book" aria-label="ID Returned Book"
+                    [(ngModel)]="idreturn" name="idreturn" >
+                </div>
+            </div>
+            <div class="row g-2 align-items-center" style="justify-content: left; margin-left: 2ex;">
+
+            </div>
+
+
+            <div class="modal-footer">
+                
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                <button type="button" class="btn btn-primary" (click)="returnB()">Cargar</button>
             </div>
         </div>
     </div>

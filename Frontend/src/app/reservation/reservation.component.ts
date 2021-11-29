@@ -14,8 +14,6 @@ export class ReservationComponent implements OnInit {
   bookid:String="";
   userid:String="";
 
-  
-
   constructor(private router: Router, private api: ClientesService) { }
 
   ngOnInit(): void {
@@ -23,6 +21,12 @@ export class ReservationComponent implements OnInit {
   }
 
   Reserva(){
+    const datos={
+      renewalQuantity:this.renewalQuantity,
+      returned:this.returned,
+      bookid:this.bookid,
+      userid:this.userid
+    }
     console.log(this.renewalQuantity,this.returned,this.bookid,this.userid);
     this.api.registrar(this.renewalQuantity,this.returned,this.bookid,this.userid).subscribe(res =>
       console.log("Book borrowed correctly")

@@ -21,9 +21,9 @@
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                             <li><a class="dropdown-item" href="reservation">Reservation</a></li>
                             <li><a class="dropdown-item" href="borrowed-book">Borrow Books</a></li>
-                            <li><a class="dropdown-item" href="#">Return Books</a></li>
-                            <li><a class="dropdown-item" href="#">Renovations</a></li>
-                            <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#createTicket">Create Ticket</a></li>
+                            <li><a class="dropdown-item" href="home">Return Books</a></li>
+                            <li><a class="dropdown-item" href="home">Renovations</a></li>
+                            <li><a class="dropdown-item" href="home">Create Ticket</a></li>
                             <li><a class="dropdown-item" href="ticket">Check Tickets</a></li>
                             <li><a class="dropdown-item" href="book">Books</a></li>
                             <li><a class="dropdown-item" href="user">Users</a></li>
@@ -33,11 +33,13 @@
             </div>
         </div>
     </nav>
-
+ 
     <div class="container">
         <div class="row justify-content-center">
-            <div class="col-auto mt-5">
-                <table class="table-dark">
+            <div class="col-auto mt-10">
+
+                <table class="table table-dark table-striped">
+
                     <tbody>
                         <tr>
                             <td>
@@ -46,45 +48,48 @@
                                         <p class="animate__animated animate__slideInUp">Books</p>
                                     </h1>
                                 </div>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <div class="display-5 text-center">
+
+                                    <button class="btn btn-outline-secondary animate__animated animate__slideInUp"
+                                        type="button" (click)="getLibros()">Search All</button>
+                                </div>
 
                             </td>
 
                         </tr>
-                        <tr>
-                            <div class="input-group animate__animated animate__slideInUp">
-                                <input type="text" class="form-control" placeholder="ID Client" aria-label="ID Client">
-                                <button class="btn btn-outline-secondary" type="button">Search by ID</button>
-                                <button class="btn btn-outline-secondary"  type="button" (click)="getLibros()">Search All</button>
-                              </div>
-                        </tr>
-                        
 
                     </tbody>
                 </table>
                 <table class="table table-dark table-striped  ">
                     <thead>
-                      <tr>
-                        <th scope="col">Bookname</th>
-                        <th scope="col">Genre</th>
-                        <th scope="col">Quantity</th>
-                        <th scope="col">State</th>
-                        <th scope="col">ISBN</th>
-                      </tr>
+                        <tr>
+                            <th scope="col">Bookname</th>
+                            <th scope="col">Genre</th>
+                            <th scope="col">Quantity</th>
+                            <th scope="col">State</th>
+                            <th scope="col">ISBN</th>
+                        </tr>
                     </thead>
                     <tbody>
-                      <tr *ngFor="let book of books">
-                        <td  >{{book.bookname}}</td>
-                        <td  >{{book.genre}}</td>
-                        <td  >{{book.quantity}}</td>
-                        <td  >{{book.state}}</td> 
-                        <td  >{{book.isbn}}</td>
-                      </tr>
-                      
+                        <tr *ngFor="let book of books">
+                            <td>{{book.bookname}}</td>
+                            <td>{{book.genre}}</td>
+                            <td>{{book.quantity}}</td>
+                            <td>{{book.state}}</td>
+                            <td>{{book.isbn}}</td>
+                        </tr>
+
                     </tbody>
-                  </table>
+                </table>
             </div>
         </div>
-        
+
     </div>
 
 </div>
+

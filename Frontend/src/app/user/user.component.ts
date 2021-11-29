@@ -10,7 +10,7 @@ import { ClientesService } from '../clientes.service';
 })
 export class UserComponent implements OnInit {
     users:any=[];
-
+    clienteid:String="";
   constructor(private router: Router, private api:ClientesService) { }
 
   ngOnInit(): void {
@@ -23,6 +23,8 @@ export class UserComponent implements OnInit {
       console.log(this.users);
     })
   }
+  
+
   
 
 

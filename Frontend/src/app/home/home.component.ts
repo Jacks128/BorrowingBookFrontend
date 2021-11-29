@@ -10,19 +10,38 @@ import 'animate.css';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-  idbbook:any="";
+  idbbook: any = "";
+  idrenewal: any = "";
+  idreturn: any = "";
 
-  constructor(private router: Router, private api:ClientesService) { }
+  constructor(private router: Router, private api: ClientesService) { }
 
   ngOnInit(): void {
   }
 
 
-  InsertarTicket(){
+  InsertarTicket() {
     console.log(this.idbbook);
-      this.api.ticket(this.idbbook).subscribe(res =>
-        console.log("Ticket ready")
-  
-      )    
-}
+    this.api.ticket(this.idbbook).subscribe(res =>
+      alert("Ticket ready")
+
+    )
+  }
+
+  renewal() {
+    console.log(this.idrenewal);
+    this.api.renewal(this.idrenewal).subscribe(res =>
+      alert("Full Refund")
+
+    )
+  }
+
+  returnB() {
+    console.log(this.idreturn);
+    this.api.returnB(this.idreturn).subscribe(res =>
+      alert( "Return Complete!")
+
+
+    )
+  }
 }
